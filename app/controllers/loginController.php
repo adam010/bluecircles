@@ -3,7 +3,8 @@
 class LoginController extends \Phalcon\Mvc\Controller{
 
    public function initialize(){
-   	echo "*** Init";
+     
+     $this->view->setTemplateAfter('default')
    }
    public function indexAction()
    {
@@ -12,11 +13,11 @@ class LoginController extends \Phalcon\Mvc\Controller{
 
    }	
    public function processAction($username = false, $age =12){
-   	  echo "Processing";
-   	  echo $username;
-   	  echo $age;
-        $this->view->setVar('username','username');
-        $this->view->setVar('username','username');
+ 
+        $this->view->setVar('username',$username);
+        $this->view->setVar('age',$age);
+        
+        $this->view->disable();
    }
   
 }
